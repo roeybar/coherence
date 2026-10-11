@@ -1,0 +1,12 @@
+.env
+test-output.log
+fresh.log
+tools/leak-deny.txt
+node_modules/
+web/dist/
+web/e2e/test-results/
+web/e2e/playwright-report/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/

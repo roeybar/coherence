@@ -1,0 +1,3 @@
+# Check out text files with LF line endings on every platform: the engine
+# hashes its own source, and the shell scripts run inside Linux containers.
+* text=auto eol=lf

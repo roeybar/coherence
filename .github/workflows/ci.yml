@@ -1,0 +1,66 @@
+name: ci
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare environment file
+        run: cp .env.example .env
+      - name: Engine tests, lint and unused-import/argument check
+        run: |
+          docker compose -p coherence-standalone-test --profile test run --rm engine-test sh -c 'pytest -p no:cacheprovider tests /opt/simple-creds-storage/tests --ignore=tests/test_hosted_no_disk.py && ruff check . && ruff format --check . && vulture --min-confidence 80 app tests'
+          docker compose -p coherence-standalone-test --profile test run --rm engine-test-hosted
+      - name: Tear down
+        if: always()
+        run: docker compose -p coherence-standalone-test --profile test down -v
+
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare environment file
+        run: cp .env.example .env
+      - name: Web lint, tests and build
+        run: docker compose -p coherence-standalone-test --profile test run --rm web-test
+      - name: Tear down
+        if: always()
+        run: docker compose -p coherence-standalone-test --profile test down -v
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare environment file
+        run: cp .env.example .env
+      - name: Browser tests
+        run: docker compose -p coherence-standalone-test --profile test run --rm e2e npx playwright test specs/selfhost.spec.ts specs/screenshot.spec.ts
+      - name: Tear down
+        if: always()
+        run: docker compose -p coherence-standalone-test --profile test down -v
+
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare environment file
+        run: cp .env.example .env
+      - name: Scan for key shapes, non-ASCII text and work markers
+        run: docker compose -p coherence-standalone-test --profile test run --rm repo-check sh -c 'python tools/leak_scan.py --generic && python -m pytest -p no:cacheprovider -q tools/test_leak_scan.py && python scripts/check_readme.py'
+      - name: Tear down
+        if: always()
+        run: docker compose -p coherence-standalone-test --profile test down -v
+
+  fresh-clone:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run the quickstart from a fresh clone
+        run: scripts/fresh_clone_check.sh "$GITHUB_WORKSPACE" HEAD fresh.log

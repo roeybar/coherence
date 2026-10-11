@@ -1,0 +1,124 @@
+name: coherence-standalone
+
+x-engine-build-runtime: &engine-build-runtime
+  context: .
+  dockerfile: engine/Dockerfile
+  target: runtime
+
+x-engine-build-test: &engine-build-test
+  context: .
+  dockerfile: engine/Dockerfile
+  target: test
+
+services:
+  engine:
+    build: *engine-build-runtime
+    mem_limit: 2g
+    env_file: .env
+    volumes:
+      - coherence-standalone-keys:/data/keys
+
+  web:
+    build:
+      context: ./web
+      target: runtime
+    mem_limit: 256m
+    ports:
+      - "127.0.0.1:${WEB_PORT:-8080}:8080"
+    environment:
+      ENGINE_URL: "${ENGINE_URL:-http://engine:8000}"
+      BODY_CAP_BYTES: "${BODY_CAP_BYTES:-134217728}"
+
+  engine-test:
+    profiles: ["test"]
+    build: *engine-build-test
+    mem_limit: 1g
+    env_file: .env.example
+    environment:
+      ENGINE_FAKE_PROVIDER: "1"
+    command: ["pytest", "-p", "no:cacheprovider", "tests", "/opt/simple-creds-storage/tests", "--ignore=tests/test_hosted_no_disk.py"]
+
+  engine-test-hosted:
+    profiles: ["test"]
+    build: *engine-build-test
+    user: "10001"
+    mem_limit: 1g
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m
+    env_file: .env.example
+    environment:
+      COHERENCE_MODE: "hosted"
+      ENGINE_FAKE_PROVIDER: "1"
+      HF_HUB_OFFLINE: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+    command: ["pytest", "-p", "no:cacheprovider", "tests/test_hosted_no_disk.py"]
+
+  web-test:
+    profiles: ["test"]
+    build:
+      context: ./web
+      target: test
+    mem_limit: 512m
+
+  engine-e2e:
+    profiles: ["test"]
+    build: *engine-build-runtime
+    mem_limit: 2g
+    env_file: .env.example
+    environment:
+      ENGINE_FAKE_PROVIDER: "1"
+      ENGINE_FAKE_CONTEXT_TOKENS: "300"
+      ENGINE_FAKE_STRONG_TIER: "1"
+      BODY_CAP_BYTES: "134217728"
+    volumes:
+      - coherence-standalone-test-keys:/data/keys
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  web-e2e:
+    profiles: ["test"]
+    build:
+      context: ./web
+      target: runtime
+    mem_limit: 256m
+    environment:
+      ENGINE_URL: "http://engine-e2e:8000"
+    depends_on:
+      engine-e2e:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/').then(r => process.exit(r.ok ? 0 : 1), () => process.exit(1))"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  e2e:
+    profiles: ["test"]
+    build:
+      context: ./web/e2e
+    mem_limit: 2g
+    environment:
+      BASE_URL: "http://web-e2e:8080"
+    volumes:
+      - ./docs:/out
+      - ./examples:/examples:ro
+      - ./engine/lore/neon_rain/prompts/opening.md:/pack/opening.md:ro
+    depends_on:
+      web-e2e:
+        condition: service_healthy
+
+  repo-check:
+    profiles: ["test"]
+    build: *engine-build-test
+    mem_limit: 512m
+    volumes:
+      - ./:/w:ro
+    working_dir: /w
+
+volumes:
+  coherence-standalone-keys:
+  coherence-standalone-test-keys:

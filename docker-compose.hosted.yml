@@ -1,0 +1,48 @@
+# Hosted deployment. Use it on top of the base file:
+#   docker compose -f docker-compose.yml -f docker-compose.hosted.yml up -d
+# Both containers run on a read-only filesystem with a RAM-only /tmp, and
+# the engine refuses to start otherwise.
+
+services:
+  engine:
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m
+    volumes: !reset []
+    env_file: !override
+      - .env.example
+    environment:
+      COHERENCE_MODE: "hosted"
+      MESSAGE_INTERVAL_SECONDS: "15"
+      HF_HUB_OFFLINE: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+      # the web sends the client, then its peer: the client is the second entry from the right.
+      TRUSTED_PROXY_HOPS: "2"
+      BODY_CAP_BYTES: "16777216"
+    restart: unless-stopped
+
+  web:
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m
+    environment:
+      # only requests from this container may name the client
+      TUNNEL_HOST: "cloudflared"
+      BODY_CAP_BYTES: "16777216"
+    restart: unless-stopped
+
+  # Public tunnel. Never started by default: it needs the wan profile and a token.
+  # the tunnel's ingress must target http://web:8080 (never the engine)
+  cloudflared:
+    image: cloudflare/cloudflared:2025.5.0
+    profiles: ["wan"]
+    # An empty token makes cloudflared exit non-zero, so an accidental
+    # activation without the token still fails closed.
+    command: tunnel --no-autoupdate run
+    mem_limit: 64m
+    read_only: true
+    environment:
+      TUNNEL_TOKEN: ${TUNNEL_TOKEN:-}
+    depends_on:
+      - web
+    restart: unless-stopped

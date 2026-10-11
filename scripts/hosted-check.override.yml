@@ -1,0 +1,35 @@
+# Test-only additions for check_hosted.sh, layered over the base and hosted files.
+services:
+  engine:
+    environment:
+      ENGINE_FAKE_PROVIDER: "1"
+      SAVE_HISTORY_CAP: "7"  # a small test value; hosted.spec.ts reads 7
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  web:
+    ports: !reset []
+    depends_on:
+      engine:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/').then(r => process.exit(r.ok ? 0 : 1), () => process.exit(1))"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  e2e-hosted:
+    profiles: ["test"]
+    build:
+      context: ./web/e2e
+    mem_limit: 2g
+    environment:
+      BASE_URL: "http://web:8080"
+    volumes:
+      - ./examples:/examples:ro
+    depends_on:
+      web:
+        condition: service_healthy

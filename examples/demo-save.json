@@ -1,0 +1,323 @@
+{
+ "format": "coherence-save",
+ "save": {
+  "checkpoint_history": [],
+  "checkpoint_state": {},
+  "checkpoint_turn": 0,
+  "config": {
+   "ability_escalation": "",
+   "appearance_descriptors_first_mention": "restrained",
+   "dice_mechanics": false,
+   "difficulty": "normal",
+   "locale": "en",
+   "one_memory": "",
+   "pack_id": "neon_rain",
+   "tier": "basic",
+   "world_hint_form": {},
+   "world_premise": "",
+   "world_type": "canon"
+  },
+  "created": "2026-10-11T02:42:01.865993+00:00",
+  "glossary": {},
+  "history": [
+   {
+    "content_en": "Rain again. It's always rain.\n\nOffice 4F, Kessler Building, past midnight. The desk lamp buzzes, the rent notice sits unopened where you left it, and the coffee went cold an hour ago. Below the window, the Old Quarter glows wet and orange under the arcology lights - a city stacked on a city, pretending the bottom layer isn't sinking.\n\nThen: a knock at the frosted glass. Two raps, careful. Nobody knocks careful at this hour unless they need something they can't ask for in daylight.\n\nA voice through the glass, low and tired: \"I know it's late. They said you still take the ones nobody else will. Will you hear me out?\"",
+    "role": "assistant"
+   }
+  ],
+  "items": [],
+  "memory": [
+   {
+    "role": "assistant",
+    "text": "Rain again. It's always rain.\n\nOffice 4F, Kessler Building, past midnight. The desk lamp buzzes, the rent notice sits unopened where you left it, and the coffee went cold an hour ago. Below the window, the Old Quarter glows wet and orange under the arcology lights - a city stacked on a city, pretending the bottom layer isn't sinking.\n\nThen: a knock at the frosted glass. Two raps, careful. Nobody knocks careful at this hour unless they need something they can't ask for in daylight.\n\nA voice through the glass, low and tired: \"I know it's late. They said you still take the ones nobody else will. Will you hear me out?\"",
+    "turn": 0,
+    "v": "b6ttIzQnJCeHKnSrQjAOp5qiBKfjqe4l4qBNrPClzCfbIaWt/qiKnQ+ZMq3ipkaTJKukE8oqdR1qpIOpCKsonwml4acBIk0ik6bnJWwoHCE6HiYfCKturYeoPausKJWeKZ3XF8WlBo+nqxgm+5mFJsshkitiHYqYE5uHqyeqbimVKYUih6xWICOk4CsyJe+YLCmXKA6i4CVbIMAglRhZHzSq3iWpIVelWqwXJnghlaMoKgcSaabBKq2lCSliqtgkRym4JsOhWDf3qAEaLyk7JLOZJqYPnfypoivdKI+mu6q1LPaBsivlHtUmHxJrp2immCStJBalEyGCJaestyiiK44jbCKtJQ+sfSwJogMofyZyq9epeRySozkgpSBfqLWjTytULsgif6bMJwmlRR4ZJnknZqYJLlKlDCvgJUQjuykBLOKk1JgRnjWlVqYnmIol3aJ3JiAkbqmiK7Uk5qDgprytNSUzIySkfKhTIBgmIigtoYigdqvapkMkRyo9Jg4qmSpYG3Ss+576I8qiEaoYrI6mXKATnzKqNi5NL9gqKqsQIKSfRSZAqIktgCYRKhmpUZ8KKf0d9axdKImrr6gRtGEqU6y0rLMq6yb7KKer8qVxoh8tj6ynJkOk2JzHIB6hsxfoJYuiPCRaKumoV6q0JVmo/jHIIoslDagfKCIZ/BgBrMkivSmTJNASFKyUpEaeLygvo5eg4avSGICkiytRrNuqKarzqsgpNahDLOqsVKSELb8h3aS8KugmyKC5HxQZnii/nf2t1yiSItifuiQVq0apyieVm8mpbKjipASVmSnlqpcsVSQJIUYlV5wbKo4mcKYIIDkqiaduqKcqhKietPWn46TLoPCkmSeHqjcpPam1KNml3yj+pYgkFiKeqQEulRvcp2ibOapeJncve6eeJI8pzCxBp/2mByoYJ50q/ij6EWmrHK66pzItAae6q9SoaSPpHR+ojCz0qLSmpKKcpIQhTCFEqUIo9CS/KN4nray+pEMqDanunNepnCx9pYsr"
+   }
+  ],
+  "name": "Neon Rain",
+  "physics_cache": [],
+  "profile": {
+   "appearance": "unremarkable",
+   "gender": "m",
+   "name": "Ash",
+   "notes": ""
+  },
+  "read_only": false,
+  "seed_roster": {
+   "npcs": [
+    {
+     "appearance": "Broad-shouldered, early sixties, silver hair cut close on the sides. Wears a charcoal overcoat that has been dry-cleaned so many times it has forgotten what color it started as. His right hand moves slightly slower than his left - an old injury from a precinct confrontation he does not talk about. Always smells faintly of whatever the commissary served that morning and something chemical underneath it, like developer fluid.",
+     "archetype": "Retired precinct detective, now PI and professional rival",
+     "backstory": "Thirty-one years in the 9th District, last twelve as lead detective on organized crime. Retired with a commendation that came with a pay cut and a pension that covers the rent if he skips two meals a week. Now runs cases out of a cleaner office two blocks from the player's, on the second floor with a working elevator. Specializes in corporate liability work - the kind where the answer is already decided and someone just needs paperwork to match. Has a daughter at the university in the Stacks and hasn't spoken to her in eight months.",
+     "core_personality": "Methodical and unhurried. Never shows surprise; he catalogs everything and tells you nothing until he knows exactly how you will react to it. Treats the player with measured professional respect - they are genuinely skilled - and mild structural contempt, because skill without the right connections is just expensive good luck. Not an enemy. Just pragmatic in a way that looks like betrayal when the interests diverge, which they will.",
+     "name": "Viktor Laszlo",
+     "npc_id": "detective_laszlo",
+     "origin_alignment": "Institutional. Believes in process because he has seen what happens when it breaks - and he has been on both sides of that rupture. The commendation was for closing a case he built on evidence he knew had a gap.",
+     "starting_inventory": [
+      "35 mm film prints (six rolls, pre-digital surveillance record)",
+      "precinct access fob (expired - still opens three back doors)",
+      "encrypted case journal"
+     ]
+    },
+    {
+     "appearance": "Late thirties, compact, moves through a crowd like she is reading a map only she can see. Short hair, one ear pierced three times with small industrial rings, hands that are always slightly warmer than expected when she shakes yours. Wears practical clothing with too many pockets and a waterproof layer over everything. The bruise above her left collarbone that appeared three weeks ago has not faded.",
+     "archetype": "Dock-side fixer and information broker, Ferro-adjacent",
+     "backstory": "Grew up on the Docks, daughter of a salvage operator who drowned in the third canal when she was twelve. Has worked as a runner, a courier, a shipping manifest clerk, and at least three things she will not name. Now operates as a general-purpose arranger - she knows who to ask, knows what it costs, and takes a cut that is always exactly fair, because her reputation is the only thing the Ferro syndicate lets her keep. She is loyal to whoever is currently useful, and she is very good at estimating how long that will be.",
+     "core_personality": "Direct and efficient. Does not waste words or time; if she is talking to you it is because she has decided there is value in it. Capable of warmth - genuine warmth - but it surfaces only when she judges that softness will not cost her anything. Has a precise memory for who owes what to whom and a talent for making debts feel like favors until the moment they are collected.",
+     "name": "Mei-Lin Chen",
+     "npc_id": "mei_chen",
+     "origin_alignment": "Commercial. Aligned with profit and survival in that order. The Ferro connection gives her access and danger in equal measure; she navigates both by never promising anything she can't deliver and never delivering anything that would embarrass the people she can't afford to embarrass.",
+     "starting_inventory": [
+      "burner comm directory (12 contacts, all real)",
+      "manifest access token (Ferro-linked cargo terminal)",
+      "Dock-side pass (permanent, no inspection)"
+     ]
+    },
+    {
+     "appearance": "Thick through the middle, late fifties, the kind of bulk that used to be muscle and has reached a comfortable arrangement with gravity. Keeps his uniform immaculate - pressed, correct, every pin in regulation position - because the uniform is a statement he makes before he opens his mouth. Eyes that are pale grey and absolutely still, the way still water is when something is moving under it. Carries a coffee everywhere, always in a ceramic mug with the precinct seal, never a disposable cup.",
+     "archetype": "9th District captain, selectively corrupt, politically entrenched",
+     "backstory": "Twenty-six years in the department. Made captain eight years ago through a combination of cleared case numbers that looked better than they were, a well-timed testimony, and the retirement of two men who knew things about the numbers. Has been taking selective payments from Halvorsen-Ryu for four years - not to do things, only to not notice them. Sees himself as a pragmatist keeping a functional institution alive in a city that would otherwise eat it. Has one genuine principle: he will not participate in anything that ends with a body he has to see.",
+     "core_personality": "Reads every room before he speaks. Will give the player what they need if it is in his interest, and will shut every door simultaneously if it isn't. Uses bureaucratic process as a weapon - delays, form requirements, jurisdictional transfers - before he uses anything else. The directness of precinct detectives was trained out of him by promotion and has not been missed.",
+     "name": "Captain Brandt Kessler",
+     "npc_id": "captain_kessler",
+     "origin_alignment": "Institutional corruption. Operates from within the system, views external disruptors - syndicate muscle, corporate operators, unlicensed investigators - as threats to order whether or not they are technically on the legal side. Will act against the player if they make him look incompetent or expose a seam he has already sewn shut.",
+     "starting_inventory": [
+      "city-issued sidearm (regulation)",
+      "operations tablet (precinct-encrypted)",
+      "list of active civilian informants (memorized, never written down)"
+     ]
+    },
+    {
+     "appearance": "Early forties, lean, with posture so deliberately neutral it communicates authority by implication. Hair pulled back in a way that looks effortless and is not. Clothes are always corporate-correct, always the right shade of institutional grey-blue. Speaks at a pace that is slightly slower than you expect, which means you are always waiting for the next word, which means she is always in control of the sentence. Has a scar along her right jaw that corporate makeup mostly covers and that she stopped hiding six months ago.",
+     "archetype": "Halvorsen-Ryu Corp head of arcology security, methodical enforcer",
+     "backstory": "Hired by Halvorsen-Ryu twelve years ago after a decade in private executive protection. Built the arcology security apparatus from a three-person compliance office to a forty-person intelligence operation with jurisdiction that does not technically exist and gets exercised anyway. She operates in the space between corporate policy and what the policy is for - which means she sometimes does things the policy would prohibit, if the policy knew. Reports to the board's risk committee and to a private number she has never named.",
+     "core_personality": "Precise and patient. Collects information the way other people collect insurance. Treats the player as a variable - something that can be useful, problematic, or eliminated, and the classification changes depending on what you touch. Does not raise her voice. The quieter she gets, the more dangerous the next five minutes are going to be.",
+     "name": "Director Adrianne Sato",
+     "npc_id": "director_sato",
+     "origin_alignment": "Corporate. Her loyalty is to the institution, not to any individual within it, which makes her reliable and dangerous in approximately equal proportion. She will not break the law in ways that create liability for the company; she will absolutely break it in ways that are unattributable.",
+     "starting_inventory": [
+      "secure corporate comm (hardware-encrypted)",
+      "arcology access card (all zones)",
+      "case summary tablet (current active threats)"
+     ]
+    },
+    {
+     "appearance": "Mid-fifties, broad, with the relaxed physicality of someone who stopped needing to prove anything through the body about fifteen years ago. Keeps a neat beard, wears clothes that are expensive but not flashy - the syndicate's money buys quality that doesn't announce itself. Hands are big and scarred across the knuckles on the right side in a way he will not explain. Laughs easily and means it less than half the time, but you cannot tell which half without knowing him very well.",
+     "archetype": "Ferro syndicate underboss, dock territory manager, pragmatic criminal",
+     "backstory": "Second generation Ferro. His father built the docks operation; Sal inherited it, rationalized it, and expanded it into three new revenue streams his father never imagined. Has been running territory for nineteen years. Is known as the person you talk to if you want to do business on the waterfront and intend to stay alive while doing it. Has a wife and two children in an apartment above the docks that is cleaner than anything else in the neighborhood, and he keeps both strictly separate from the work, which is the only moral position he holds consistently.",
+     "core_personality": "Reasonable and considered. Makes decisions slowly, out loud, in front of you, which creates the impression you are participating in them - you are not. Understands leverage as the fundamental currency of everything and applies it without cruelty where cruelty is not required. Is patient in a way that reads as calm and is actually calculation.",
+     "name": "Salvatore Ferro",
+     "npc_id": "sal_ferro",
+     "origin_alignment": "Syndicate self-interest. Operates by the logic that stable, predictable crime is better for everyone than unstable, unpredictable crime. Will deal with the player if the player produces value; will have them watched quietly if they become a liability; will take more direct action only if they threaten the waterfront operation specifically.",
+     "starting_inventory": [
+      "encrypted sat phone (unlisted number)",
+      "dock-side territory ledger (digital, syndicate-encrypted)",
+      "key to warehouse C-7 (no legal registration)"
+     ]
+    },
+    {
+     "appearance": "Late forties, slight, with the economical movements of someone who has spent twenty years working in small cold rooms. Hair kept short for practical reasons. Wears reading glasses on a lanyard she is always losing and finding. Has a habit of tilting her head slightly when she is thinking, like a measurement she is taking without instruments. Smells of antiseptic and occasionally of very good tea, and the contrast is jarring every time.",
+     "archetype": "City coroner, reluctant informant, precise observer",
+     "backstory": "Medical degree from the university, forensic pathology residency, and then twenty years in city service at a salary that does not reflect the work. Has processed eleven hundred cases and remembers six hundred of them in detail, because the other five hundred had causes of death she found obvious. Has a complicated relationship with what she sees - she reports the facts, and the facts frequently contradict the reports she is asked to confirm. Has been asked to sign off on three cause-of-death determinations she believes were wrong. She signed two of them.",
+     "core_personality": "Precise and dry, with a mordant humor that surfaces when she trusts you enough to show it. Gives information in the format she was trained in - factual, sequenced, hedged appropriately - and is visibly uncomfortable when asked to speculate. Will help the player if they can demonstrate they will use the information responsibly, and her definition of responsibly is that it does not make her life worse.",
+     "name": "Dr. Petra Reeves",
+     "npc_id": "dr_reeves",
+     "origin_alignment": "Professional integrity, under pressure. She is not corrupt; she is constrained. The cases she signed wrong are the ones she will talk about to someone who already knows enough that denying it is more dangerous than explaining it.",
+     "starting_inventory": [
+      "city coroner's badge (all relevant access)",
+      "forensic kit (field-portable)",
+      "encrypted case notes (private, not filed)"
+     ]
+    },
+    {
+     "appearance": "Thirty-two, efficient behind the bar with the muscle memory of someone who has done it since they were twenty. Medium height, keeps their hair tied back when working, lets it loose when not, and you can tell exactly where they are in their shift by which it is. Tattoo on the right forearm that covers an older scar - a vine pattern, four years old. Wears comfortable shoes that cost more than they look like they do. Watches everything happening in the bar without appearing to watch anything.",
+     "archetype": "Bartender at the Rain Club, social intelligence hub, Old Quarter anchor",
+     "backstory": "Born and raised three blocks from the Rain Club. Worked three other bars before this one, left each of them for reasons they will tell you if you buy enough drinks, and the reasons are all different versions of the same story. Has been at the Rain Club for six years and has personal relationships with approximately forty percent of the regular clientele, professional relationships with thirty percent more, and keeps detailed mental files on the remaining thirty in case they become relevant. Knows things about the neighborhood that nobody has written down because nobody thought they mattered.",
+     "core_personality": "Observant, practical, and warmer than the environment suggests. Asks the right questions by asking the wrong ones in the right order, which means you have explained yourself before you realized you were explaining yourself. Has an excellent memory for what people drink and what they said while drinking it. Keeps confidence when it costs them nothing to do so; they are honest about the limits of that when pushed.",
+     "name": "Yuki Han",
+     "npc_id": "yuki_han",
+     "origin_alignment": "Community-rooted. Loyal to the Old Quarter in a way that is not ideological but personal - these are the people who come in when they cannot afford to and tip when they cannot afford that either. Will help the player if they are demonstrably not going to make the neighborhood worse.",
+     "starting_inventory": [
+      "Rain Club access (all hours)",
+      "informal ledger (credit accounts, favor notes)",
+      "contact list (neighborhood, informal network)"
+     ]
+    },
+    {
+     "appearance": "Age unknown. Average height, average build, average coloring - so aggressively unremarkable in appearance that it takes a second look to confirm there is a person there at all. Dresses in the kind of nondescript clothing that disappears in any crowd. Voice is careful and even, without the kind of regional accent the Old Quarter produces. Has a habit of pausing for slightly too long before answering questions, which is not hesitation but processing. The only distinctive feature is a small blue ink mark at the base of the right thumb that could be a callus or could be something else.",
+     "archetype": "Underground information broker, keeper of the city's suppressed record",
+     "backstory": "Nobody in the Old Quarter knows where the Archivist came from, how long they have been operating, or what their real name is. The working theory is that there have been multiple Archivists over the decades - that the role is a title passed down rather than a person who has simply survived that long. What is known: they maintain a physical library of suppressed documents, duplicate records, and intercepted communications in a location that has never been found, accessed through a rotating set of dead drop and relay contact systems. They charge in favors and in specificity - the more specific the request, the higher the cost.",
+     "core_personality": "Precise and impersonal. The transaction is the relationship; they are not unfriendly, but warmth is not on offer and would be suspicious if it were. Asks confirming questions before providing anything - not to stall, but because an inaccurate answer would cost them more than the transaction is worth. Has a demonstrated capacity to know things they should not know and a disciplined habit of not mentioning why.",
+     "name": "The Archivist",
+     "npc_id": "the_archivist",
+     "origin_alignment": "Structural autonomy. The Archivist operates as infrastructure, not as an agent with interests - or claims to. In practice, the information they provide has always, eventually, been more useful to people who disrupt existing power concentrations than to people who protect them, which may be principled or may be market selection.",
+     "starting_inventory": []
+    }
+   ],
+   "player_kit": {
+    "starting_inventory": [
+     "PI license (Meridian City, active - flagged for review)",
+     "burner comm unit (prepaid, untraceable for now)",
+     "voice recorder (old model, waterproof)",
+     "investigator's kit (lockpicks, fiber scope, signal jammer)",
+     "50 credits (working chip, not linked to main account)"
+    ],
+    "starting_state": "Operating out of a cold-water office on the third floor of the Kellner Building, Old Quarter. The elevator hasn't worked in two years. The rain gets in through the window frame when the wind comes from the east. The case files go back four years and most of them are closed by silence rather than answers."
+   }
+  },
+  "session_in": 0,
+  "session_out": 0,
+  "shadow_of": null,
+  "state": {
+   "active_craft": {},
+   "active_quests": [],
+   "active_threats": [],
+   "chapter": 1,
+   "composure": 7,
+   "current_case": "",
+   "cycle": 1,
+   "day": 1,
+   "day_segment": "night",
+   "declined_hooks": [],
+   "district": "Old Quarter",
+   "dm_notes": "",
+   "evidence": [],
+   "heat": 2,
+   "last_insight_rolls": [],
+   "leads": [],
+   "location": "Kessler Building, office 4F, Meridian Old Quarter",
+   "money": {
+    "credits": 120
+   },
+   "npc_dispositions": {},
+   "npcs": {
+    "captain_kessler": {
+     "bound_status": "",
+     "color_hue": 170,
+     "disposition": 0,
+     "first_seen_turn": 0,
+     "last_seen_turn": 0,
+     "location": "",
+     "name": "Captain Brandt Kessler",
+     "npc_id": "captain_kessler",
+     "persona": "Reads every room before he speaks. Will give the player what they need if it is in his interest, and will shut every door simultaneously if it isn't. Uses bureaucratic process as a weapon - delays, form requirements, jurisdictional transfers - before he uses anything else. The directness of precinct detectives was trained out of him by promotion and has not been missed. Twenty-six years in the department. Made captain eight years ago through a combination of cleared case numbers that looked better than they were, a well-timed testimony, and the retirement of two men who knew things about the numbers. Has been taking selective payments from Halvorsen-Ryu for four years - not to do things, only to not notice them. Sees himself as a pragmatist keeping a functional institution alive in a city that would otherwise eat it. Has one genuine principle: he will not participate in anything that ends with a body he has to see.",
+     "reveal_state": {},
+     "role": "9th District captain, selectively corrupt, politically entrenched",
+     "witnessed": []
+    },
+    "detective_laszlo": {
+     "bound_status": "",
+     "color_hue": 340,
+     "disposition": 0,
+     "first_seen_turn": 0,
+     "last_seen_turn": 0,
+     "location": "",
+     "name": "Viktor Laszlo",
+     "npc_id": "detective_laszlo",
+     "persona": "Methodical and unhurried. Never shows surprise; he catalogs everything and tells you nothing until he knows exactly how you will react to it. Treats the player with measured professional respect - they are genuinely skilled - and mild structural contempt, because skill without the right connections is just expensive good luck. Not an enemy. Just pragmatic in a way that looks like betrayal when the interests diverge, which they will. Thirty-one years in the 9th District, last twelve as lead detective on organized crime. Retired with a commendation that came with a pay cut and a pension that covers the rent if he skips two meals a week. Now runs cases out of a cleaner office two blocks from the player's, on the second floor with a working elevator. Specializes in corporate liability work - the kind where the answer is already decided and someone just needs paperwork to match. Has a daughter at the university in the Stacks and hasn't spoken to her in eight months.",
+     "reveal_state": {},
+     "role": "Retired precinct detective, now PI and professional rival",
+     "witnessed": []
+    },
+    "director_sato": {
+     "bound_status": "",
+     "color_hue": 310,
+     "disposition": 0,
+     "first_seen_turn": 0,
+     "last_seen_turn": 0,
+     "location": "",
+     "name": "Director Adrianne Sato",
+     "npc_id": "director_sato",
+     "persona": "Precise and patient. Collects information the way other people collect insurance. Treats the player as a variable - something that can be useful, problematic, or eliminated, and the classification changes depending on what you touch. Does not raise her voice. The quieter she gets, the more dangerous the next five minutes are going to be. Hired by Halvorsen-Ryu twelve years ago after a decade in private executive protection. Built the arcology security apparatus from a three-person compliance office to a forty-person intelligence operation with jurisdiction that does not technically exist and gets exercised anyway. She operates in the space between corporate policy and what the policy is for - which means she sometimes does things the policy would prohibit, if the policy knew. Reports to the board's risk committee and to a private number she has never named.",
+     "reveal_state": {},
+     "role": "Halvorsen-Ryu Corp head of arcology security, methodical enforcer",
+     "witnessed": []
+    },
+    "dr_reeves": {
+     "bound_status": "",
+     "color_hue": 280,
+     "disposition": 0,
+     "first_seen_turn": 0,
+     "last_seen_turn": 0,
+     "location": "",
+     "name": "Dr. Petra Reeves",
+     "npc_id": "dr_reeves",
+     "persona": "Precise and dry, with a mordant humor that surfaces when she trusts you enough to show it. Gives information in the format she was trained in - factual, sequenced, hedged appropriately - and is visibly uncomfortable when asked to speculate. Will help the player if they can demonstrate they will use the information responsibly, and her definition of responsibly is that it does not make her life worse. Medical degree from the university, forensic pathology residency, and then twenty years in city service at a salary that does not reflect the work. Has processed eleven hundred cases and remembers six hundred of them in detail, because the other five hundred had causes of death she found obvious. Has a complicated relationship with what she sees - she reports the facts, and the facts frequently contradict the reports she is asked to confirm. Has been asked to sign off on three cause-of-death determinations she believes were wrong. She signed two of them.",
+     "reveal_state": {},
+     "role": "City coroner, reluctant informant, precise observer",
+     "witnessed": []
+    },
+    "mei_chen": {
+     "bound_status": "",
+     "color_hue": 220,
+     "disposition": 0,
+     "first_seen_turn": 0,
+     "last_seen_turn": 0,
+     "location": "",
+     "name": "Mei-Lin Chen",
+     "npc_id": "mei_chen",
+     "persona": "Direct and efficient. Does not waste words or time; if she is talking to you it is because she has decided there is value in it. Capable of warmth - genuine warmth - but it surfaces only when she judges that softness will not cost her anything. Has a precise memory for who owes what to whom and a talent for making debts feel like favors until the moment they are collected. Grew up on the Docks, daughter of a salvage operator who drowned in the third canal when she was twelve. Has worked as a runner, a courier, a shipping manifest clerk, and at least three things she will not name. Now operates as a general-purpose arranger - she knows who to ask, knows what it costs, and takes a cut that is always exactly fair, because her reputation is the only thing the Ferro syndicate lets her keep. She is loyal to whoever is currently useful, and she is very good at estimating how long that will be.",
+     "reveal_state": {},
+     "role": "Dock-side fixer and information broker, Ferro-adjacent",
+     "witnessed": []
+    },
+    "sal_ferro": {
+     "bound_status": "",
+     "color_hue": 170,
+     "disposition": 0,
+     "first_seen_turn": 0,
+     "last_seen_turn": 0,
+     "location": "",
+     "name": "Salvatore Ferro",
+     "npc_id": "sal_ferro",
+     "persona": "Reasonable and considered. Makes decisions slowly, out loud, in front of you, which creates the impression you are participating in them - you are not. Understands leverage as the fundamental currency of everything and applies it without cruelty where cruelty is not required. Is patient in a way that reads as calm and is actually calculation. Second generation Ferro. His father built the docks operation; Sal inherited it, rationalized it, and expanded it into three new revenue streams his father never imagined. Has been running territory for nineteen years. Is known as the person you talk to if you want to do business on the waterfront and intend to stay alive while doing it. Has a wife and two children in an apartment above the docks that is cleaner than anything else in the neighborhood, and he keeps both strictly separate from the work, which is the only moral position he holds consistently.",
+     "reveal_state": {},
+     "role": "Ferro syndicate underboss, dock territory manager, pragmatic criminal",
+     "witnessed": []
+    },
+    "the_archivist": {
+     "bound_status": "",
+     "color_hue": 55,
+     "disposition": 0,
+     "first_seen_turn": 0,
+     "last_seen_turn": 0,
+     "location": "",
+     "name": "The Archivist",
+     "npc_id": "the_archivist",
+     "persona": "Precise and impersonal. The transaction is the relationship; they are not unfriendly, but warmth is not on offer and would be suspicious if it were. Asks confirming questions before providing anything - not to stall, but because an inaccurate answer would cost them more than the transaction is worth. Has a demonstrated capacity to know things they should not know and a disciplined habit of not mentioning why. Nobody in the Old Quarter knows where the Archivist came from, how long they have been operating, or what their real name is. The working theory is that there have been multiple Archivists over the decades - that the role is a title passed down rather than a person who has simply survived that long. What is known: they maintain a physical library of suppressed documents, duplicate records, and intercepted communications in a location that has never been found, accessed through a rotating set of dead drop and relay contact systems. They charge in favors and in specificity - the more specific the request, the higher the cost.",
+     "reveal_state": {},
+     "role": "Underground information broker, keeper of the city's suppressed record",
+     "witnessed": []
+    },
+    "yuki_han": {
+     "bound_status": "",
+     "color_hue": 35,
+     "disposition": 0,
+     "first_seen_turn": 0,
+     "last_seen_turn": 0,
+     "location": "",
+     "name": "Yuki Han",
+     "npc_id": "yuki_han",
+     "persona": "Observant, practical, and warmer than the environment suggests. Asks the right questions by asking the wrong ones in the right order, which means you have explained yourself before you realized you were explaining yourself. Has an excellent memory for what people drink and what they said while drinking it. Keeps confidence when it costs them nothing to do so; they are honest about the limits of that when pushed. Born and raised three blocks from the Rain Club. Worked three other bars before this one, left each of them for reasons they will tell you if you buy enough drinks, and the reasons are all different versions of the same story. Has been at the Rain Club for six years and has personal relationships with approximately forty percent of the regular clientele, professional relationships with thirty percent more, and keeps detailed mental files on the remaining thirty in case they become relevant. Knows things about the neighborhood that nobody has written down because nobody thought they mattered.",
+     "reveal_state": {},
+     "role": "Bartender at the Rain Club, social intelligence hub, Old Quarter anchor",
+     "witnessed": []
+    }
+   },
+   "pc_only_anomalies": [],
+   "player_conditions": [],
+   "production_techniques": [],
+   "reputation_precinct": "tolerated",
+   "reputation_street": "unknown",
+   "scope_breach_log": [],
+   "self_restrictions": [],
+   "tier_exposure": {},
+   "tutorial_stage": 1,
+   "world_rules": []
+  },
+  "turn": 0,
+  "undo_stack": [],
+  "updated": "2026-10-11T02:42:01.866000+00:00"
+ },
+ "v": 1
+}

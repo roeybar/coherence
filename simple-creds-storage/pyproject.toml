@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simple-creds-storage"
+version = "1.0.0"
+description = "Encrypted file store for API keys, with an in-memory unlocked vault."
+license = "PolyForm-Noncommercial-1.0.0"
+requires-python = ">=3.11"
+dependencies = ["cryptography"]
+
+[tool.setuptools]
+packages = ["simple_creds_storage"]

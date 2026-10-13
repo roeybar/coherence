@@ -1,0 +1,3 @@
+{"id": "testpack", "name": "Test Pack", "version": "0.0.1", "schema_version": 1,
+ "description": "A tiny pack for engine tests.",
+ "templates": {"opening": "opening.md"}}

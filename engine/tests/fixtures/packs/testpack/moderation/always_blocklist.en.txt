@@ -1,0 +1,2 @@
+# Test always-on list. One entry per line.
+zzalwayscanary

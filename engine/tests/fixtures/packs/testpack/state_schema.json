@@ -1,0 +1,136 @@
+{
+ "fields": [
+  {
+   "name": "tutorial_stage",
+   "type": "int",
+   "default": 0,
+   "engine": false
+  },
+  {
+   "name": "cycle",
+   "type": "int",
+   "default": 1,
+   "engine": true
+  },
+  {
+   "name": "chapter",
+   "type": "int",
+   "default": 1,
+   "engine": true
+  },
+  {
+   "name": "day",
+   "type": "int",
+   "default": 1,
+   "engine": true
+  },
+  {
+   "name": "day_segment",
+   "type": "str",
+   "default": "morning",
+   "engine": true
+  },
+  {
+   "name": "location",
+   "type": "str",
+   "default": "Test room",
+   "engine": true
+  },
+  {
+   "name": "active_threats",
+   "type": "list",
+   "default": [],
+   "engine": true
+  },
+  {
+   "name": "active_quests",
+   "type": "list",
+   "default": [],
+   "engine": true
+  },
+  {
+   "name": "world_rules",
+   "type": "list",
+   "default": [],
+   "engine": true
+  },
+  {
+   "name": "self_restrictions",
+   "type": "list",
+   "default": [],
+   "engine": true
+  },
+  {
+   "name": "production_techniques",
+   "type": "list",
+   "default": [],
+   "engine": true
+  },
+  {
+   "name": "player_conditions",
+   "type": "list",
+   "default": [],
+   "engine": true
+  },
+  {
+   "name": "pc_only_anomalies",
+   "type": "list",
+   "default": [],
+   "engine": true
+  },
+  {
+   "name": "last_insight_rolls",
+   "type": "list",
+   "default": [],
+   "engine": true
+  },
+  {
+   "name": "declined_hooks",
+   "type": "list",
+   "default": [],
+   "engine": true
+  },
+  {
+   "name": "scope_breach_log",
+   "type": "list",
+   "default": [],
+   "engine": true
+  },
+  {
+   "name": "npc_dispositions",
+   "type": "dict",
+   "default": {},
+   "engine": true
+  },
+  {
+   "name": "active_craft",
+   "type": "dict",
+   "default": {},
+   "engine": true
+  },
+  {
+   "name": "money",
+   "type": "dict",
+   "default": {},
+   "engine": true
+  },
+  {
+   "name": "npcs",
+   "type": "dict",
+   "default": {},
+   "engine": true
+  },
+  {
+   "name": "tier_exposure",
+   "type": "dict",
+   "default": {},
+   "engine": true
+  },
+  {
+   "name": "dm_notes",
+   "type": "str",
+   "default": "",
+   "engine": true
+  }
+ ]
+}

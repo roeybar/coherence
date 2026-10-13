@@ -1,0 +1,8 @@
+# Test pack list. One entry per line.
+zzpackcanary
+zzglitterbolt
+zzsplit zzphrase
+zzdash-word
+q&j
+bedfacadecafe
+abosetig

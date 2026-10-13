@@ -1,0 +1,55 @@
+{
+ "beats": [
+  ["assistant", "Rain has just moved through the square. The well at its center still drips, and beside the shuttered chapel a caravan is unloading crates - the drivers keep glancing your way."],
+  ["user", "I pull my hood up and drift toward the caravan, listening."],
+  ["assistant", "You offer only \"just passing through.\" The driver holds your eye a moment too long, then waves you on - but the words \"keep it wrapped until the ferryman asks\" follow you across the square."],
+  ["user", "I circle behind the chapel and wait for the drivers to finish, watching which crate they keep closest."],
+  ["assistant", "From the chapel's shadow you count nine crates - eight stacked carelessly, one set apart on a folded tarp, small enough to carry alone. When the bells ring the half hour, the youngest driver sits on it, the way a man sits on a thing he's been told not to leave."],
+  ["user", "I sidle up to the youngest driver: \"long roads make loose knots - want a hand with the last of it?\" [while we talk I mark the tarp crate with a chalk cross]"],
+  ["assistant", "The driver laughs, a little too loudly, and shifts his weight off the crate."]
+ ],
+ "earlier": [
+  "Earlier scene 1.", "Earlier move 1.", "Earlier scene 2.", "Earlier move 2.",
+  "Earlier scene 3.", "Earlier move 3.", "Earlier scene 4.", "Earlier move 4.",
+  "Earlier scene 5.", "Earlier move 5.", "Earlier scene 6.", "Earlier move 6.",
+  "Earlier scene 7.", "Earlier move 7.", "Earlier scene 8.", "Earlier move 8.",
+  "Earlier scene 9.", "Earlier move 9.", "Earlier scene 10.", "Earlier move 10.",
+  "Earlier scene 11.", "Earlier move 11.", "Earlier scene 12.", "Earlier move 12.",
+  "Earlier scene 13.", "Earlier move 13.", "Earlier scene 14.", "Earlier move 14.",
+  "Earlier scene 15.", "Earlier move 15.", "Earlier scene 16.", "Earlier move 16.",
+  "Earlier scene 17.", "Earlier move 17.", "Earlier scene 18.", "Earlier move 18.",
+  "Earlier scene 19.", "Earlier move 19.", "Earlier scene 20.", "Earlier move 20.",
+  "Earlier scene 21.", "Earlier move 21.", "Earlier scene 22.", "Earlier move 22.",
+  "Earlier scene 23.", "Earlier move 23.", "Earlier scene 24.", "Earlier move 24.",
+  "Earlier scene 25.", "Earlier move 25.", "Earlier scene 26.", "Earlier move 26.",
+  "Earlier scene 27.", "Earlier move 27.", "Earlier scene 28.", "Earlier move 28.",
+  "Earlier scene 29.", "Earlier move 29.", "Earlier scene 30.", "Earlier move 30.",
+  "Earlier scene 31.", "Earlier move 31.", "Earlier scene 32.", "Earlier move 32.",
+  "Earlier scene 33.", "Earlier move 33."
+ ],
+ "save_name": "Test Save",
+ "player_name": "Mira",
+ "npcs": [
+  {"npc_id": "mira", "name": "Mira", "role": "Ledger keeper", "persona": "Keeps a tally of every crate that crosses the square - and of every stranger."},
+  {"npc_id": "driver", "name": "Caravan driver", "role": "Driver", "persona": "Won't meet your eye. The third driver this week to insist nothing is wrong."},
+  {"npc_id": "wellkeeper", "name": "The well-keeper", "role": "Keeper", "persona": "Claims the well has been \"restless\" since the rains began."},
+  {"npc_id": "ferryman", "name": "Ferryman", "role": "Unknown", "persona": "Named twice by the drivers, seen by no one. Whatever is wrapped, it's for him."}
+ ],
+ "items": [
+  {"name": "rope", "description": "ten paces of hemp"},
+  {"name": "copper coins", "description": "x 12"},
+  {"name": "bucket", "description": "in scene"},
+  {"name": "lantern", "description": "half a night of oil"},
+  {"name": "belt knife", "description": "plain, well-kept"},
+  {"name": "oil cloak", "description": "worn, hooded"},
+  {"name": "road bread", "description": "x 2"},
+  {"name": "flint & steel", "description": ""},
+  {"name": "river map", "description": "ferry crossings marked"},
+  {"name": "ledger", "description": "", "holder": "npc:mira"},
+  {"name": "bucket", "description": "", "holder": "npc:the well-keeper"},
+  {"name": "milestone", "description": "", "location": "North road"},
+  {"name": "landing stage", "description": "", "location": "Ferry crossing"}
+ ],
+ "locations": ["Village square", "Old Quarter", "North road", "Ferry crossing"],
+ "suggested_moves": ["approach the well", "ask about the caravan", "leave the square"]
+}

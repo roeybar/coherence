@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pydantic-settings
+httpx
+fastembed
+numpy
+cryptography
+pyyaml

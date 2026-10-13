@@ -1,0 +1,44 @@
+{
+  "fields": [
+    {"name": "tutorial_stage",        "type": "int",  "default": 0,  "engine": false, "monotonic_increase": true},
+
+    {"name": "cycle",                 "type": "int",  "default": 1,                              "engine": true},
+    {"name": "chapter",               "type": "int",  "default": 1,                              "engine": true},
+    {"name": "day",                   "type": "int",  "default": 1,                              "engine": true, "monotonic_increase": true},
+    {"name": "day_segment",           "type": "str",  "default": "night",                       "engine": true},
+
+    {"name": "location",              "type": "str",  "default": "Kessler Building, office 4F, Meridian Old Quarter", "engine": true},
+    {"name": "district",              "type": "str",  "default": "Old Quarter",                  "engine": false},
+
+    {"name": "heat",                  "type": "int",  "default": 2,  "engine": false},
+    {"name": "composure",             "type": "int",  "default": 7,  "engine": false},
+    {"name": "current_case",          "type": "str",  "default": "",                             "engine": false},
+    {"name": "leads",                 "type": "list", "default": [],                             "engine": false},
+    {"name": "evidence",              "type": "list", "default": [],                             "engine": false},
+    {"name": "reputation_street",     "type": "str",  "default": "unknown",                      "engine": false},
+    {"name": "reputation_precinct",   "type": "str",  "default": "tolerated",                    "engine": false},
+
+    {"name": "active_threats",        "type": "list", "default": [], "engine": true},
+    {"name": "active_quests",         "type": "list", "default": [], "engine": true},
+    {"name": "npc_dispositions",      "type": "dict", "default": {}, "engine": true},
+    {"name": "dm_notes",              "type": "str",  "default": "", "engine": true},
+    {"name": "active_craft",          "type": "dict", "default": {}, "engine": true},
+
+    {"name": "money",                 "type": "dict", "default": {}, "engine": true},
+    {"name": "npcs",                  "type": "dict", "default": {}, "engine": true},
+
+    {"name": "world_rules",           "type": "list", "default": [], "engine": true},
+    {"name": "self_restrictions",     "type": "list", "default": [], "engine": true},
+    {"name": "production_techniques", "type": "list", "default": [], "engine": true},
+    {"name": "player_conditions",     "type": "list", "default": [], "engine": true},
+    {"name": "pc_only_anomalies",     "type": "list", "default": [], "engine": true},
+    {"name": "last_insight_rolls",    "type": "list", "default": [], "engine": true},
+    {"name": "declined_hooks",        "type": "list", "default": [], "engine": true},
+    {"name": "tier_exposure",         "type": "dict", "default": {}, "engine": true},
+    {"name": "scope_breach_log",      "type": "list", "default": [], "engine": true}
+  ],
+
+  "money_denominations": {
+    "credits": {"label": "cr", "display_order": 0}
+  }
+}

@@ -1,0 +1,1 @@
+SCENE: Office 4F, Kessler Building, Old Quarter. Past midnight. Rain on the window, one desk lamp, rent three weeks late. A knock at the frosted-glass door - a client, and clients at this hour mean trouble worth money. That is all the player knows.

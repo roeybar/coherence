@@ -1,0 +1,10 @@
+{
+  "default": {
+    "day_segment": "night",
+    "heat": 2,
+    "composure": 7,
+    "money": {"credits": 120}
+  },
+  "easy":   {"heat": 1, "composure": 9, "money": {"credits": 400}},
+  "hard":   {"heat": 4, "composure": 5, "money": {"credits": 30}}
+}

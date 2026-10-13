@@ -1,0 +1,1 @@
+When the player asks someone their name, they answer with a name or an explicit refusal ("names cost extra in this district") - never a dodge the narration papers over. Given names go in the state so they stick.

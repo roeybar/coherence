@@ -1,0 +1,144 @@
+{
+  "id":             "neon_rain",
+  "name":           "Neon Rain",
+  "version":        "0.1.0",
+  "schema_version": 1,
+  "author":         "Roey Bar",
+  "description":    "Hard-boiled detective noir in Meridian City, 2087: perpetual rain, corporate arcologies and a PI one bad night from broke. No magic and no powers, just heat, nerve and leverage.",
+
+  "monster": {
+    "enabled": false
+  },
+
+  "tutorial": {
+    "enabled": true,
+    "stages":  {"briefing": 1, "case_taken": 2, "skipped": 99}
+  },
+
+  "seed_roster_file": "prompts/seed_roster.json",
+
+  "templates": {
+    "header_open":          "prompts/header.md",
+    "header_tutorial":      "prompts/header_tutorial.md",
+    "scene_tutorial":       "prompts/scene_tutorial.md",
+    "scene_open":           "prompts/scene_open.md",
+    "dm_rules_tutorial":    "prompts/dm_rules_tutorial.md",
+    "dm_rules_open":        "prompts/dm_rules_open.md",
+    "writing_overrides":    "prompts/writing_overrides.md",
+    "appearance_restraint": "prompts/appearance_restraint.md",
+    "ask_name_rule":        "prompts/ask_name_rule.md",
+    "opening":              "prompts/opening.md",
+    "opening_freeform":     "prompts/opening_freeform.md"
+  },
+
+  "moderation": {
+    "blocklist_file":        "moderation/blocklist.{locale}.txt",
+    "always_blocklist_file": "moderation/always_blocklist.{locale}.txt"
+  },
+
+  "beats": [
+    {
+      "id":    "city_watching",
+      "label": "The city is watching",
+      "when":  {"all": [
+        {"field": "state.heat", "op": "gte", "value": 5},
+        {"field": "state.heat", "op": "lt",  "value": 8}
+      ]},
+      "inject": {"template": "prompts/beats/city_watching.md"}
+    },
+    {
+      "id":    "burned",
+      "label": "Burned - the city wants them",
+      "when":  {"field": "state.heat", "op": "gte", "value": 8},
+      "inject": {"template": "prompts/beats/burned.md"}
+    },
+    {
+      "id":    "fraying",
+      "label": "Composure fraying",
+      "when":  {"field": "state.composure", "op": "lte", "value": 3},
+      "inject": {"text": "COMPOSURE FRAYING (mechanics, not flavor): the player's nerve is nearly gone. Their hands are unsteady; they misread one social cue per scene; NPCs notice the state and react to it (soften, exploit, or withdraw). Reflect it in narration without naming the stat. If the player rests, drinks something warm, closes a lead, or scores any real win, raise composure by 1-2 in state_delta. Sustained pressure, violence, or a dead lead lowers it by 1."}
+    },
+    {
+      "id":    "violence_has_weight",
+      "label": "Violence has weight",
+      "when":  {"input_matches": "\\b(shoot|shot|stab|punch|kill|attack|fight|gun|knife|choke|beat him|beat her)\\b"},
+      "inject": {"text": "VIOLENCE HAS WEIGHT (mechanics, not flavor): violence in Meridian is loud, messy, and expensive. It is never clean and never free: witnesses record, drones tag, wounds linger as player_conditions, and heat RISES in state_delta (+1 for a scuffle, +2 for a weapon drawn in public, +3 for a body). Narrate the aftermath cost, not action-movie choreography. NPCs remember who bled."}
+    }
+  ],
+
+  "pipeline_overrides": [
+    {"beat": "encounter", "mode": "only_when",
+     "when": {"field": "state.heat", "op": "gte", "value": 3}},
+    {"beat": "npc_react", "mode": "off"}
+  ],
+
+  "state_bindings": [
+    {
+      "id":   "nerves_shot",
+      "when": {"field": "state.composure", "op": "lte", "value": 2},
+      "then": {"dc_modifier": {"applies_to": "both", "modifier": 3}}
+    },
+    {
+      "id":   "city_pressure",
+      "when": {"field": "state.heat", "op": "gte", "value": 7},
+      "then": {"dc_modifier": {"applies_to": "dice", "modifier": 2}}
+    },
+    {
+      "id":   "ghost",
+      "when": {"field": "state.heat", "op": "lte", "value": 1},
+      "then": {"dc_modifier": {"applies_to": "dice", "modifier": -2}}
+    },
+    {
+      "id":   "snap",
+      "when": {"field": "state.composure", "op": "lte", "value": 1},
+      "then": {"fire_beat": "fraying"}
+    }
+  ],
+
+  "_comment_encounter": "noir confrontation dice mechanics. Encounter fires only_when heat>=3 (see pipeline_overrides). Dice resolve tense standoffs: heat climbs on failure, composure erodes under sustained pressure.",
+
+  "encounter_mechanics": {
+    "dice_notation": "1d20",
+    "engine_rolls":  false,
+    "outcome_tiers": [
+      {"tier": "critical", "min_margin":  5},
+      {"tier": "success",  "min_margin":  0},
+      {"tier": "partial",  "min_margin": -4},
+      {"tier": "fail",     "min_margin": -9},
+      {"tier": "fumble",   "min_margin": null}
+    ],
+    "effects": {
+      "critical": {
+        "state_delta": {"heat": -1, "composure": 1},
+        "directive": "DICE RESOLUTION - CRITICAL: The confrontation goes fully your way. You read the room, took control, and the other party backed down or gave ground. Heat eases; composure holds. Narrate the win without embellishment - one clean beat, then the hook. Do NOT mention the DC or dice mechanics."
+      },
+      "success": {
+        "state_delta": {},
+        "directive": "DICE RESOLUTION - SUCCESS: You hold ground and come away intact. What you needed from this - a name, a door opened, a moment of retreat - you get. Narrate the outcome without dramatising it, then the hook. Do NOT mention the DC or dice mechanics."
+      },
+      "partial": {
+        "state_delta": {"heat": 1},
+        "directive": "DICE RESOLUTION - PARTIAL: You got something but not everything - and it cost you. Heat ticks up; a complication enters the scene. The other party gained an inch. Narrate both the gain and the cost, briefly, then the hook. Do NOT mention the DC or dice mechanics."
+      },
+      "fail": {
+        "state_delta": {"heat": 2, "composure": -1},
+        "directive": "DICE RESOLUTION - FAIL: The confrontation turns against you. You do NOT get what you came for. Heat rises; composure takes a hit. Narrate the loss, then the hook: what the other side presses on now. No silver lining. Do NOT mention the DC or dice mechanics."
+      },
+      "fumble": {
+        "state_delta": {"heat": 3, "composure": -2},
+        "directive": "DICE RESOLUTION - FUMBLE: It collapses badly. Heat spikes; composure frays hard. What you tried to do is denied and a new problem is opening. No recovery line. Narrate the damage without rescue, then the hook: the new problem. Do NOT mention the DC or dice mechanics."
+      }
+    },
+    "clamps": {
+      "heat":      [0, 10],
+      "composure": [0, 10]
+    }
+  },
+
+  "_comment_length_profiles": "noir is short-leaning. writing_overrides.md already says 'one sensory line per scene'. Standard turns stay short; encounter turns get a short action beat.",
+
+  "length_profiles": {
+    "standard": "short",
+    "encounter": "short"
+  }
+}

@@ -1,0 +1,1 @@
+On first mention of any NPC, describe what a tired detective would clock: build, posture, what their clothes say about money, what their hands are doing. No attractiveness language on first mention - desirability only ever emerges later, through the player's own read.

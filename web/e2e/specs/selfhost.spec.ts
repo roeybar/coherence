@@ -1,6 +1,6 @@
 import { test, expect, Page, Locator } from '@playwright/test';
 import { readFileSync } from 'node:fs';
-import { KEY, TEXT, story, dmBlocks, openMenu, closeMenu, openSettings, addSelfHostKey, ensureSelfHostKey, newGame, send, idbRecords, slotCount, slotRows, setSavePass, enterSlot, clickUnlock, closeSettings } from './helpers';
+import { KEY, TEXT, story, dmBlocks, openMenu, closeMenu, openSettings, addSelfHostKey, ensureSelfHostKey, newGame, send, longPress, idbRecords, slotCount, slotRows, setSavePass, enterSlot, clickUnlock, closeSettings } from './helpers';
 
 const DEMO_SAVE = process.env.DEMO_SAVE || '/examples/demo-save.json';
 
@@ -85,15 +85,6 @@ test('with no config the page shows maintenance, then the key controls once the 
 });
 
 const turns = (page: Page) => story(page).getByTestId('turn');
-
-async function longPress(page: Page, target: Locator) {
-  await target.scrollIntoViewIfNeeded();
-  const b = (await target.boundingBox())!;
-  await page.mouse.move(b.x + b.width / 2, b.y + 12);
-  await page.mouse.down();
-  await page.waitForTimeout(600);
-  await page.mouse.up();
-}
 
 async function playOneTurn(page: Page) {
   await page.goto('/');

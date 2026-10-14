@@ -1,4 +1,4 @@
-import { expect, Page } from '@playwright/test';
+import { expect, Page, Locator } from '@playwright/test';
 
 // A canary, deliberately not key-shaped.
 export const KEY = 'test-canary-key-7f3a';
@@ -53,6 +53,24 @@ export async function send(page: Page, text: string) {
   const box = page.getByPlaceholder('What do you do?');
   await box.fill(text);
   await box.press('Enter');
+}
+
+// Hold a press on a turn until its action row opens. Text settling below the story
+// can scroll the turn away from the pointer mid-hold, which cancels the press,
+// so a press that did not open the row is made again.
+export async function longPress(page: Page, target: Locator) {
+  const row = target.getByTestId('turn-actions');
+  await expect(async () => {
+    await target.scrollIntoViewIfNeeded();
+    const b = (await target.boundingBox())!;
+    await page.mouse.move(b.x + b.width / 2, b.y + 12);
+    await page.mouse.down();
+    try {
+      await expect(row).toHaveAttribute('data-open', 'true', { timeout: 3_000 });
+    } finally {
+      await page.mouse.up();
+    }
+  }).toPass({ timeout: 30_000 });
 }
 
 // The engine allows 5 unlocks a minute per address, and every page is a new session,

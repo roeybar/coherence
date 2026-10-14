@@ -1,5 +1,5 @@
-import { test, expect, Page, Locator } from '@playwright/test';
-import { TEXT, story, dmBlocks, openSettings, closeSettings, ensureSelfHostKey, newGame, send } from './helpers';
+import { test, expect, Page } from '@playwright/test';
+import { TEXT, story, dmBlocks, openSettings, closeSettings, ensureSelfHostKey, newGame, send, longPress } from './helpers';
 
 test.describe.configure({ mode: 'serial' });
 test.setTimeout(240_000);
@@ -19,15 +19,6 @@ function trackSaves(page: Page) {
     }
   });
   return seen;
-}
-
-async function longPress(page: Page, target: Locator) {
-  await target.scrollIntoViewIfNeeded();
-  const b = (await target.boundingBox())!;
-  await page.mouse.move(b.x + b.width / 2, b.y + 12);
-  await page.mouse.down();
-  await page.waitForTimeout(600);
-  await page.mouse.up();
 }
 
 async function play(page: Page, count: number) {
